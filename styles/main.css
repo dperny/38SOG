@@ -1,0 +1,79 @@
+body {
+  /* default to grey backgorund and white text in the whole site. we may
+   * override this in later blocks, but this covers the whole thing in one
+   * swoop. */
+  background-color: darkslategray;
+  color: white;
+  /* ledere likes Noto Sans, but we'll default to standard sans-serif fonts if
+   * not available. */
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+main {
+  /* Anywhere in the main content, we want to center the content on the page.
+   * To do this, use auto margins */
+  margin: auto;
+  /* 1280px is probably a good width for most screens, but that's just the max
+   * width. if you're not using responsive layouts in 2021 you might as well be
+   * using tables like 1999 */
+  max-width: 1280px;
+  padding: 10px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+#logo {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#logo img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+#grid-about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+main > section::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  display: block;
+  left: 0;
+  clear: both;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 
+ * This is a pretty fancy CSS rule, but basically what it does is create a
+ * horizontal line across the bottom of each section in the What We Do section.
+ */
+#whatwedo h3::after {
+  content: '';
+  width: 60%;
+  height: 2px;
+  display: block;
+  left: 0;
+  clear: both;
+  background-color: white;
+  margin: 20px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.infogrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
+}
